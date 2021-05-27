@@ -1,7 +1,7 @@
 import './App.css';
 import { Fragment, useState } from 'react';
 import Formulario from './components/Formulario';
-import ListaProducto from './components/ListaProducto';
+import TablaProducto from './components/TablaProducto';
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <Fragment>
       <div className="container">
-        <div className="row">
+        <div className="row mt-4">
           <div className="col-lg-6 col-md-6">
             <h2 className="text-center">Inventario</h2>
             <Formulario
@@ -25,12 +25,9 @@ function App() {
             />
           </div>
           <div className="col-lg-6 col-md-6">
-            {productos.map(producto => (
-              <ListaProducto
-                key={producto.id}
-                producto={producto}
-              />
-            ))}
+            <TablaProducto
+              productos={productos}
+            />
           </div>
         </div>
       </div>
